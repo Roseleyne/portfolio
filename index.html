@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roseleyne Duarte Silva — Senior QA Engineer | SDET</title>
+  <meta name="description" content="Senior QA Engineer | SDET | QA Automation. Frameworks de automação escaláveis para fintech, e-commerce e marketplace. 8+ anos de experiência." />
+  <meta property="og:title" content="Roseleyne Duarte Silva — Senior QA Engineer" />
+  <meta property="og:description" content="Construo frameworks de automação que reduzem ciclos de regressão e entregam qualidade em escala." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --bg:        #0a0e17;
+      --bg-card:   #111827;
+      --bg-hover:  #1a2235;
+      --border:    #1e2d45;
+      --accent:    #00e5c3;
+      --accent2:   #7b61ff;
+      --text:      #e2e8f0;
+      --muted:     #64748b;
+      --mono:      'Space Mono', monospace;
+      --sans:      'Space Grotesk', sans-serif;
+      --r:         10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ─── SCANLINE TEXTURE ───────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,229,195,0.015) 2px,
+        rgba(0,229,195,0.015) 4px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1rem, 5vw, 4rem);
+      height: 60px;
+      background: rgba(10,14,23,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: .06em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: var(--muted);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); text-decoration: none; }
+
+    /* ─── LAYOUT ──────────────────────────────────────────── */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 100px clamp(1rem, 8vw, 9rem);
+    }
+
+    section + section { padding-top: 80px; }
+
+    .container { max-width: 1060px; margin: 0 auto; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: .6rem;
+    }
+
+    h2.section-title {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2.5rem;
+      line-height: 1.2;
+    }
+
+    /* ─── HERO ────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+    }
+
+    .hero-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .18em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1.hero-name {
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.0;
+      color: #fff;
+      letter-spacing: -.02em;
+      margin-bottom: .5rem;
+    }
+
+    h1.hero-name .accent { color: var(--accent); }
+
+    .hero-title {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 1.8rem;
+      font-family: var(--mono);
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text);
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    /* Stats row */
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat { display: flex; flex-direction: column; }
+
+    .stat-num {
+      font-family: var(--mono);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: .3rem;
+      letter-spacing: .03em;
+    }
+
+    /* CTA */
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .7rem 1.5rem;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      transition: all .2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0a0e17;
+    }
+
+    .btn-primary:hover {
+      background: #00ffda;
+      text-decoration: none;
+      color: #0a0e17;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: rgba(0,229,195,.08);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    /* Hero grid bg */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(ellipse at 80% 40%, rgba(0,229,195,.06) 0%, transparent 70%),
+                  radial-gradient(ellipse at 60% 70%, rgba(123,97,255,.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* ─── ACHIEVEMENTS ────────────────────────────────────── */
+    #achievements { background: var(--bg-card); }
+
+    .ach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .ach-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .ach-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .ach-icon {
+      font-size: 1.6rem;
+      margin-bottom: .8rem;
+      display: block;
+    }
+
+    .ach-metric {
+      font-family: var(--mono);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+
+    .ach-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ─── PROJECTS ────────────────────────────────────────── */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .proj-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .proj-card:hover {
+      border-color: var(--accent2);
+      transform: translateY(-2px);
+    }
+
+    .proj-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .proj-icon { font-size: 1.6rem; }
+
+    .proj-links { display: flex; gap: .6rem; }
+
+    .proj-link {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: .2rem .5rem;
+      transition: color .15s, border-color .15s;
+    }
+
+    .proj-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .proj-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .proj-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .4rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      background: rgba(0,229,195,.08);
+      color: var(--accent);
+      border-radius: 3px;
+      padding: .2rem .5rem;
+      letter-spacing: .04em;
+    }
+
+    .tag-purple {
+      background: rgba(123,97,255,.08);
+      color: #a78bfa;
+    }
+
+    /* ─── SKILLS ──────────────────────────────────────────── */
+    #skills { background: var(--bg-card); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .skill-group {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.4rem;
+    }
+
+    .skill-group-title {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    .pill {
+      font-size: 12px;
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: .25rem .75rem;
+      transition: border-color .15s;
+    }
+
+    .pill:hover { border-color: var(--accent); }
+
+    .pill-hot {
+      border-color: rgba(0,229,195,.3);
+      background: rgba(0,229,195,.05);
+      color: var(--accent);
+    }
+
+    /* ─── EXPERIENCE ──────────────────────────────────────── */
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0 2rem;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-date {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      padding-top: .2rem;
+      line-height: 1.5;
+    }
+
+    .exp-company {
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: .2rem;
+    }
+
+    .exp-role {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: .5rem;
+    }
+
+    .exp-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: .8rem;
+      line-height: 1.6;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+    }
+
+    .exp-bullets li {
+      font-size: 13px;
+      color: var(--muted);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '▸';
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 10px;
+      top: .2rem;
+    }
+
+    /* ─── METRICS ─────────────────────────────────────────── */
+    #metrics { background: var(--bg-card); }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .metric-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+    }
+
+    .metric-num {
+      font-family: var(--mono);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+
+    .metric-label {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ─── CONTACT ─────────────────────────────────────────── */
+    #contact {
+      text-align: center;
+      background: var(--bg);
+    }
+
+    .contact-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--muted);
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── SCROLL REVEAL ───────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: .5rem;
+      }
+
+      .hero-stats { gap: 1.5rem; }
+    }
+
+    /* ─── TERMINAL CURSOR ─────────────────────────────────── */
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      background: var(--accent);
+      margin-left: 3px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* ─── ACTIVE NAV ──────────────────────────────────────── */
+    .nav-links a.active { color: var(--accent); }
+
+    /* AI badge */
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: var(--mono);
+      font-size: 10px;
+      background: rgba(123,97,255,.12);
+      color: #a78bfa;
+      border: 1px solid rgba(123,97,255,.25);
+      border-radius: 20px;
+      padding: .2rem .7rem;
+      margin-left: .5rem;
+    }
+
+    /* Divider line */
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────────── -->
+<nav>
+  <span class="nav-logo">RD<span style="color:var(--text)">.</span>dev</span>
+  <ul class="nav-links">
+    <li><a href="#achievements">Conquistas</a></li>
+    <li><a href="#projects">Projetos</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experiência</a></li>
+    <li><a href="#contact">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">disponível para novas oportunidades</p>
+
+    <h1 class="hero-name">
+      Roseleyne<br><span class="accent">Duarte</span><span class="cursor"></span>
+    </h1>
+
+    <p class="hero-title">Senior QA Engineer &nbsp;/&nbsp; SDET &nbsp;/&nbsp; QA Automation</p>
+
+    <p class="hero-tagline">
+      Construo frameworks de automação que reduzem ciclos de regressão e entregam qualidade em escala —
+      de fintech crítica a e-commerce de alto volume.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">8+</span>
+        <span class="stat-label">anos em QA & automação</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3M+</span>
+        <span class="stat-label">req/dia em performance testing</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">5</span>
+        <span class="stat-label">frameworks de automação</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">6</span>
+        <span class="stat-label">setores de atuação</span>
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+      <a href="#contact" class="btn btn-outline">Entrar em Contato</a>
+      <a href="https://github.com/Roseleyne" target="_blank" class="btn btn-outline">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ACHIEVEMENTS ──────────────────────────────────────── -->
+<section id="achievements">
+  <div class="container reveal">
+    <p class="section-label">impacto comprovado</p>
+    <h2 class="section-title">Key Achievements</h2>
+
+    <div class="ach-grid">
+
+      <div class="ach-card">
+        <span class="ach-icon">🏦</span>
+        <div class="ach-metric">Zero</div>
+        <p class="ach-desc">incidentes críticos em produção na migração <strong>SulAmérica → MetLife</strong> no Banco C6 — cobertura E2E de fluxos de contratação, cancelamento e reativação.</p>
+      </div>
+
+      <div class="ach-card">
+        <span class="ach-icon">⚡</span>
+        <div class="ach-metric">3M+</div>
+        <p class="ach-desc">requisições/dia suportadas com <strong>JMeter</strong> em plataforma de e-commerce de alto volume — identificando gargalos antes do go-live.</p>
+      </div>
+
+      <div class="ach-card">
+        <span class="ach-icon">🛒</span>
+        <div class="ach-metric">E2E</div>
+        <p class="ach-desc">cobertura completa do projeto <strong>Marketplace Out</strong> (Mercado Livre/Carrefour) — Fulfillment via CD ECJ, VTEX, ERP Gold e middleware Digibee.</p>
+      </div>
+
+      <div class="ach-card">
+        <span class="ach-icon">✅</span>
+        <div class="ach-metric">Zero</div>
+        <p class="ach-desc">defeitos críticos pós-deploy no <strong>Go Live Unimed</strong> — cobertura total de testes E2E, integração e regressão com BDD e TDD.</p>
+      </div>
+
+      <div class="ach-card">
+        <span class="ach-icon">⚙️</span>
+        <div class="ach-metric">85%+</div>
+        <p class="ach-desc">cobertura de fluxos críticos de negócio via <strong>Cypress E2E framework</strong> — reduzindo ciclos de regressão manual de horas para minutos.</p>
+      </div>
+
+      <div class="ach-card">
+        <span class="ach-icon">🌐</span>
+        <div class="ach-metric">6</div>
+        <p class="ach-desc">plataformas integradas e validadas em projetos marketplace — <strong>VTEX, ERP Gold, Digibee, ISY, SkyHub, Magento</strong> — com zero perda de dados entre sistemas.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ───────────────────────────────────────────── -->
+<section id="projects">
+  <div class="container reveal">
+    <p class="section-label">portfolio técnico</p>
+    <h2 class="section-title">Projetos</h2>
+
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <span class="proj-icon">🤖</span>
+          <div class="proj-links">
+            <a href="https://github.com/Roseleyne/cypress-e2e-framework" target="_blank" class="proj-link">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-title">Cypress E2E Automation Framework</div>
+        <p class="proj-desc">Framework de automação E2E com Cypress usando Page Object Model e Custom Commands. Pipeline CI/CD integrado via GitHub Actions com execução automática em pull requests. Cobertura de fluxos críticos: busca, autenticação, checkout e validação de dados.</p>
+        <div class="proj-tags">
+          <span class="tag">Cypress</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Page Object Model</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <span class="proj-icon">🔌</span>
+          <div class="proj-links">
+            <a href="https://github.com/Roseleyne/api-automation-suite" target="_blank" class="proj-link">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-title">API Automation Suite</div>
+        <p class="proj-desc">Suite completa de testes de API com Postman e Rest-Assured. Cobertura CRUD total com validação de JSON Schema, testes de contrato e edge cases. Integração com Newman no pipeline CI/CD gerando relatórios HTML automatizados.</p>
+        <div class="proj-tags">
+          <span class="tag">Postman</span>
+          <span class="tag">Rest-Assured</span>
+          <span class="tag">Newman</span>
+          <span class="tag">JSON Schema</span>
+          <span class="tag">Java</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <span class="proj-icon">⚡</span>
+          <div class="proj-links">
+            <a href="https://github.com/Roseleyne/performance-testing-jmeter" target="_blank" class="proj-link">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-title">Performance Testing — JMeter</div>
+        <p class="proj-desc">Scripts de load testing simulando 3M+ requisições/dia em plataforma de e-commerce. Análise de throughput, latência P90/P95 e error rate. Dashboard integrado com Grafana para monitoramento em tempo real e identificação de gargalos.</p>
+        <div class="proj-tags">
+          <span class="tag">JMeter</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">Load Testing</span>
+          <span class="tag">Performance</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <span class="proj-icon">📱</span>
+          <div class="proj-links">
+            <a href="https://github.com/Roseleyne/mobile-automation-appium" target="_blank" class="proj-link">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-title">Mobile Automation — Appium</div>
+        <p class="proj-desc">Framework de automação mobile com Appium para Android e iOS. Integração com BrowserStack Device Farm para execução paralela em dispositivos reais. Cobertura de fluxos core: instalação, login, funcionalidades principais e logout.</p>
+        <div class="proj-tags">
+          <span class="tag">Appium</span>
+          <span class="tag">BrowserStack</span>
+          <span class="tag">Android</span>
+          <span class="tag">Python</span>
+          <span class="tag">Mobile CI/CD</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <span class="proj-icon">🧠</span>
+          <div class="proj-links">
+            <a href="https://github.com/Roseleyne/ai-qa-assistant" target="_blank" class="proj-link">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-title">AI-Assisted Testing
+          <span class="ai-badge">✦ 2026</span>
+        </div>
+        <p class="proj-desc">Integração de IA no processo de QA — geração de cenários de teste com LLMs, análise automática de requisitos e criação de casos de teste com prompts documentados. Comparativo entre output de IA e refinamento humano. Self-healing selectors com Playwright + Claude.</p>
+        <div class="proj-tags">
+          <span class="tag tag-purple">AI Testing</span>
+          <span class="tag tag-purple">Playwright</span>
+          <span class="tag tag-purple">Prompt Engineering</span>
+          <span class="tag tag-purple">LLM</span>
+          <span class="tag tag-purple">GitHub Actions</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <span class="proj-icon">🏗️</span>
+          <div class="proj-links">
+            <a href="https://github.com/Roseleyne/robot-framework-automation" target="_blank" class="proj-link">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-title">Robot Framework — BDD Suite</div>
+        <p class="proj-desc">Suite de automação com Robot Framework e Python para sistemas financeiros e de seguro. Testes E2E, integração e API com Postman/Swagger. Cobertura de backend, BFF e serviços de billing em ambientes Dev, QA e HML.</p>
+        <div class="proj-tags">
+          <span class="tag">Robot Framework</span>
+          <span class="tag">Python</span>
+          <span class="tag">BDD</span>
+          <span class="tag">Swagger</span>
+          <span class="tag">API Testing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ─────────────────────────────────────────────── -->
+<section id="skills">
+  <div class="container reveal">
+    <p class="section-label">stack técnica</p>
+    <h2 class="section-title">Tech Stack & Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <div class="skill-group-title">🤖 QA Automation</div>
+        <div class="skill-pills">
+          <span class="pill pill-hot">Cypress</span>
+          <span class="pill pill-hot">Playwright</span>
+          <span class="pill">Selenium</span>
+          <span class="pill">Robot Framework</span>
+          <span class="pill">Appium</span>
+          <span class="pill">Cucumber</span>
+          <span class="pill">JUnit</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">🔌 API Testing</div>
+        <div class="skill-pills">
+          <span class="pill pill-hot">Postman</span>
+          <span class="pill pill-hot">Rest-Assured</span>
+          <span class="pill">Swagger/OpenAPI</span>
+          <span class="pill">Newman</span>
+          <span class="pill">JSON Schema</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">⚡ Performance</div>
+        <div class="skill-pills">
+          <span class="pill pill-hot">JMeter</span>
+          <span class="pill">Grafana</span>
+          <span class="pill">Load Testing</span>
+          <span class="pill">Stress Testing</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">📱 Mobile Automation</div>
+        <div class="skill-pills">
+          <span class="pill pill-hot">Appium</span>
+          <span class="pill">BrowserStack</span>
+          <span class="pill">Android Studio</span>
+          <span class="pill">iOS Testing</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">🔄 CI/CD & DevOps</div>
+        <div class="skill-pills">
+          <span class="pill pill-hot">GitHub Actions</span>
+          <span class="pill pill-hot">Azure Pipelines</span>
+          <span class="pill">Azure DevOps</span>
+          <span class="pill">Git</span>
+          <span class="pill">Docker</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">💻 Linguagens</div>
+        <div class="skill-pills">
+          <span class="pill">Java</span>
+          <span class="pill">Python</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Ruby</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">🗂️ Gestão & Colaboração</div>
+        <div class="skill-pills">
+          <span class="pill">Jira</span>
+          <span class="pill">Confluence</span>
+          <span class="pill">Xray</span>
+          <span class="pill">Camunda</span>
+          <span class="pill">Digibee</span>
+          <span class="pill">Salesforce</span>
+          <span class="pill">ServiceNow</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">☁️ Cloud & Bancos</div>
+        <div class="skill-pills">
+          <span class="pill">AWS</span>
+          <span class="pill">Azure</span>
+          <span class="pill">MySQL</span>
+          <span class="pill">MongoDB</span>
+          <span class="pill">SQL Server</span>
+          <span class="pill">DBeaver</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">🧠 AI Testing <span class="ai-badge">2026</span></div>
+        <div class="skill-pills">
+          <span class="pill pill-hot">AI Test Generation</span>
+          <span class="pill pill-hot">Prompt Engineering</span>
+          <span class="pill">Self-healing Selectors</span>
+          <span class="pill">LLM-assisted QA</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─────────────────────────────────────────── -->
+<section id="experience">
+  <div class="container reveal">
+    <p class="section-label">trajetória profissional</p>
+    <h2 class="section-title">Experiência</h2>
+
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-date">2023 — Atual</div>
+          <div class="exp-company">Cadmus → Banco C6</div>
+        </div>
+        <div>
+          <div class="exp-role">Quality Assurance Sênior</div>
+          <p class="exp-desc">Automação E2E e testes de API em sistemas financeiros e de seguro críticos.</p>
+          <ul class="exp-bullets">
+            <li>Automação E2E com Cypress e Java em sistemas financeiros de seguro</li>
+            <li>Testes de API com Robot Framework, Python, Postman e Swagger</li>
+            <li>Suporte ao projeto de migração SulAmérica → MetLife — zero incidentes críticos em produção</li>
+            <li>Testes mobile com BrowserStack e gestão completa do ciclo de bugs</li>
+            <li>Cobertura de serviços backend, BFF e billing em Dev, QA e HML</li>
+          </ul>
+          <div class="proj-tags" style="margin-top:.8rem">
+            <span class="tag">Robot Framework</span><span class="tag">Python</span><span class="tag">Postman</span><span class="tag">MongoDB</span><span class="tag">BrowserStack</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-date">2022 — 2023</div>
+          <div class="exp-company">AGF</div>
+        </div>
+        <div>
+          <div class="exp-role">Software Quality Assurance Specialist</div>
+          <p class="exp-desc">Testes funcionais, E2E e não funcionais em aplicações Web e Mobile (Angular, Flutter).</p>
+          <ul class="exp-bullets">
+            <li>Validação de APIs com Postman e automação com Python</li>
+            <li>Testes mobile com Android Studio e validação de banco de dados</li>
+            <li>Métricas de qualidade, evidências e melhoria contínua de processos</li>
+          </ul>
+          <div class="proj-tags" style="margin-top:.8rem">
+            <span class="tag">Python</span><span class="tag">Postman</span><span class="tag">Angular</span><span class="tag">Flutter</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-date">2021 — 2022</div>
+          <div class="exp-company">Grupo GBI</div>
+        </div>
+        <div>
+          <div class="exp-role">Quality Assurance Sênior</div>
+          <p class="exp-desc">Testes funcionais e automação com Java, BDD e TDD para sistemas enterprise.</p>
+          <ul class="exp-bullets">
+            <li>Validação de APIs com Postman e Swagger — alinhamento de critérios de aceite</li>
+            <li>Go Live do projeto Unimed — zero defeitos críticos pós-deploy</li>
+            <li>Governança de qualidade e gestão de bug lifecycle</li>
+          </ul>
+          <div class="proj-tags" style="margin-top:.8rem">
+            <span class="tag">Java</span><span class="tag">BDD</span><span class="tag">TDD</span><span class="tag">Azure DevOps</span><span class="tag">Swagger</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-date">2020 — 2021</div>
+          <div class="exp-company">Carrefour</div>
+        </div>
+        <div>
+          <div class="exp-role">Quality Assurance Sênior</div>
+          <p class="exp-desc">Testes E2E do projeto Marketplace Out — implementação do Mercado Livre no ecossistema Carrefour.</p>
+          <ul class="exp-bullets">
+            <li>Validação de integrações com VTEX, ERP Gold e middleware Digibee</li>
+            <li>Cobertura de fluxos de Fulfillment via Distribution Centers (CD ECJ)</li>
+            <li>Uso de Jira, Confluence, Xray, Camunda e DBeaver</li>
+          </ul>
+          <div class="proj-tags" style="margin-top:.8rem">
+            <span class="tag">Java</span><span class="tag">Camunda</span><span class="tag">Xray</span><span class="tag">VTEX</span><span class="tag">Digibee</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-date">2019 — 2020</div>
+          <div class="exp-company">MercadoCar</div>
+        </div>
+        <div>
+          <div class="exp-role">Software Quality Assurance Specialist</div>
+          <p class="exp-desc">Testes de sistemas POS, ERP e e-commerce com automação em Cypress e Selenium.</p>
+          <ul class="exp-bullets">
+            <li>Testes fiscais, administrativos e de logística</li>
+            <li>Implementação e-commerce com VTEX e integração com plataformas logísticas</li>
+            <li>Automação com Cypress, Selenium e Python + validação de APIs</li>
+          </ul>
+          <div class="proj-tags" style="margin-top:.8rem">
+            <span class="tag">Cypress</span><span class="tag">Selenium</span><span class="tag">Python</span><span class="tag">VTEX</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-date">2017 — 2019</div>
+          <div class="exp-company">B2W Digital</div>
+        </div>
+        <div>
+          <div class="exp-role">Quality Assurance Tester</div>
+          <p class="exp-desc">Testes de integrações marketplace e e-commerce no ecossistema SkyHub.</p>
+          <ul class="exp-bullets">
+            <li>Validação de APIs REST e JSON em integrações VTEX, Magento, Bling e Tiny</li>
+            <li>Onboarding de sellers e monitoramento pós go-live</li>
+            <li>SLA tracking e suporte técnico via Zendesk e Salesforce</li>
+          </ul>
+          <div class="proj-tags" style="margin-top:.8rem">
+            <span class="tag">SkyHub</span><span class="tag">REST API</span><span class="tag">Ruby</span><span class="tag">VTEX</span><span class="tag">Magento</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── METRICS ────────────────────────────────────────────── -->
+<section id="metrics">
+  <div class="container reveal">
+    <p class="section-label">números que falam</p>
+    <h2 class="section-title">Métricas & Impacto</h2>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-num">3M+</div>
+        <div class="metric-label">requisições/dia suportadas em Performance Testing</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">~95%</div>
+        <div class="metric-label">redução de tempo em ciclos de regressão com automação</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">0</div>
+        <div class="metric-label">defeitos críticos nos Go Lives Unimed e Banco C6</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">6</div>
+        <div class="metric-label">setores de atuação: fintech, seguro, e-commerce, marketplace, varejo, logística</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">5</div>
+        <div class="metric-label">frameworks de automação ativos no portfolio</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">6</div>
+        <div class="metric-label">plataformas ERP e marketplace integradas e validadas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container reveal">
+    <p class="section-label">vamos conversar</p>
+    <h2 class="section-title" style="text-align:center">Pronta para o próximo desafio</h2>
+    <p class="contact-tagline">
+      Aberta a oportunidades como Senior QA Engineer, SDET ou QA Automation Engineer —
+      presencial, híbrido ou remoto.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:roseleyne.duarte@gmail.com" class="btn btn-primary">✉ roseleyne.duarte@gmail.com</a>
+      <a href="https://www.linkedin.com/in/roseleyne-duarte-silva/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+      <a href="https://github.com/Roseleyne" target="_blank" class="btn btn-outline">GitHub ↗</a>
+      <a href="https://roseleyne-duarte.notion.site/Engenharia-de-Software-330567204b5080b58cc2e604f693d2c4" target="_blank" class="btn btn-outline">Notion ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <span>Roseleyne Duarte Silva — Senior QA Engineer</span>
+  &nbsp;·&nbsp;
+  <span id="year"></span>
+  &nbsp;·&nbsp;
+  <span>Itanhaém, São Paulo, BR</span>
+</footer>
+
+<!-- ─── SCRIPTS ────────────────────────────────────────────── -->
+<script>
+  // Ano dinâmico
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+
+  // Active nav
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const navIo = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => navIo.observe(s));
+</script>
+
+</body>
+</html>
