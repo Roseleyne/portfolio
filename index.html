@@ -566,6 +566,36 @@
       gap: 1rem;
     }
 
+    .contact-group { margin-bottom: 2.2rem; }
+    .contact-group-label {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #0a0e17;
+    }
+    .btn-whatsapp:hover {
+      background: #2ee576;
+      color: #0a0e17;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+    .btn-download {
+      background: rgba(0, 255, 218, .07);
+      color: var(--accent);
+      border: 1px dashed var(--accent);
+    }
+    .btn-download:hover {
+      background: var(--accent);
+      color: #0a0e17;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
     /* ─── FOOTER ──────────────────────────────────────────── */
     footer {
       text-align: center;
@@ -1300,13 +1330,22 @@
       exclusivamente remoto.
     </p>
 
-    <div class="contact-links">
-      <a href="mailto:roseleyne.duarte@gmail.com" class="btn btn-primary">✉ roseleyne.duarte@gmail.com</a>
-      <a href="https://wa.me/5511952238102?text=Ol%C3%A1%20Roseleyne!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" class="btn btn-outline">WhatsApp 💬</a>
-      <a href="https://www.linkedin.com/in/roseleyne/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
-      <a href="cv/roseleyne-duarte-cv-ptbr.pdf" download class="btn btn-outline">CV PT-BR ⬇</a>
-      <a href="cv/roseleyne-duarte-resume-en.pdf" download class="btn btn-outline">Resume EN ⬇</a>
-      <a href="https://github.com/Roseleyne" target="_blank" class="btn btn-outline">GitHub ↗</a>
+    <div class="contact-group">
+      <p class="contact-group-label">💬 Fale comigo</p>
+      <div class="contact-links">
+        <a href="mailto:roseleyne.duarte@gmail.com" class="btn btn-primary">✉ roseleyne.duarte@gmail.com</a>
+        <a href="https://wa.me/5511952238102?text=Ol%C3%A1%20Roseleyne!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" class="btn btn-whatsapp">💬 Chamar no WhatsApp</a>
+        <a href="https://www.linkedin.com/in/roseleyne/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+        <a href="https://github.com/Roseleyne" target="_blank" class="btn btn-outline">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="contact-group">
+      <p class="contact-group-label">📄 Baixe meu currículo</p>
+      <div class="contact-links">
+        <a href="cv/roseleyne-duarte-cv-ptbr.pdf" download class="btn btn-download">⬇ Baixar CV — Português (PDF)</a>
+        <a href="cv/roseleyne-duarte-resume-en.pdf" download class="btn btn-download">⬇ Download Resume — English (PDF)</a>
+      </div>
     </div>
   </div>
 </section>
