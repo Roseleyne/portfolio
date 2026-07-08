@@ -351,16 +351,18 @@
     .proj-link {
       font-family: var(--mono);
       font-size: 11px;
-      color: var(--muted);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: .2rem .5rem;
-      transition: color .15s, border-color .15s;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(0, 229, 195, .08);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      padding: .35rem .8rem;
+      transition: all .15s;
     }
 
     .proj-link:hover {
-      color: var(--accent);
-      border-color: var(--accent);
+      background: var(--accent);
+      color: #0a0e17;
       text-decoration: none;
     }
 
@@ -683,10 +685,9 @@
     <li><a href="#achievements">Conquistas</a></li>
     <li><a href="#projects">Projetos</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experiência</a></li>
     <li><a href="#education">Formação</a></li>
-    <li><a href="https://roseleyne.github.io/career/" target="_blank">Trajetória ↗</a></li>
     <li><a href="#contact">Contato</a></li>
+    <li><a href="https://roseleyne.github.io/career/" target="_blank">Trajetória ↗</a></li>
     <li><a href="en/">🇺🇸 EN</a></li>
   </ul>
 </nav>
@@ -1100,137 +1101,6 @@
           <span class="pill pill-hot">Prompt Engineering</span>
           <span class="pill">Self-healing Selectors</span>
           <span class="pill">LLM-assisted QA</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ─── EXPERIENCE ─────────────────────────────────────────── -->
-<section id="experience">
-  <div class="container reveal">
-    <p class="section-label">trajetória profissional</p>
-    <h2 class="section-title">Experiência</h2>
-
-    <div class="exp-list">
-
-      <div class="exp-item">
-        <div>
-          <div class="exp-date">Set 2025 — Mai 2026</div>
-          <div class="exp-company">C6 Bank (via Cadmus)</div>
-        </div>
-        <div>
-          <div class="exp-role">Senior QA Engineer · SDET</div>
-          <p class="exp-desc">Automação de testes em sistemas financeiros e de seguro críticos — fintech & insurance.</p>
-          <ul class="exp-bullets">
-            <li>Projetou suíte automatizada com Robot Framework + Python cobrindo billing, BFF, apólices, inadimplência e reativação de seguros em 5+ módulos financeiros críticos</li>
-            <li>Liderou validação E2E da migração SulAmérica → MetLife — zero incidentes críticos em produção</li>
-            <li>Executou testes mobile via BrowserStack (iOS/Android) e investigou incidentes com MongoDB, DBeaver e Grafana</li>
-            <li>Suportou Dev, HML e Go Live em squads Agile/Scrum — 3+ lançamentos validados sem regressões</li>
-          </ul>
-          <div class="proj-tags" style="margin-top:.8rem">
-            <span class="tag">Robot Framework</span><span class="tag">Python</span><span class="tag">Postman</span><span class="tag">MongoDB</span><span class="tag">Grafana</span><span class="tag">BrowserStack</span>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="exp-item">
-        <div>
-          <div class="exp-date">Out 2024 — Set 2025</div>
-          <div class="exp-company">AGF</div>
-        </div>
-        <div>
-          <div class="exp-role">Senior QA Automation Engineer</div>
-          <p class="exp-desc">Plataformas de investimento integradas à B3 — sistemas financeiros Web e Mobile (Angular, Flutter).</p>
-          <ul class="exp-bullets">
-            <li>Automatizou testes E2E com Cypress + Python cobrindo fluxos bancários em Angular e Flutter</li>
-            <li>Executou testes mobile com Appium + Android Studio e validação SQL — 6+ checkpoints regulatórios por release sem defeitos críticos</li>
-            <li>Definiu estratégia de testes E2E e integração alinhada a compliance financeiro</li>
-          </ul>
-          <div class="proj-tags" style="margin-top:.8rem">
-            <span class="tag">Cypress</span><span class="tag">Python</span><span class="tag">Appium</span><span class="tag">SQL</span><span class="tag">Angular</span><span class="tag">Flutter</span>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="exp-item">
-        <div>
-          <div class="exp-date">Mar 2024 — Set 2024</div>
-          <div class="exp-company">Grupo GBI</div>
-        </div>
-        <div>
-          <div class="exp-role">Senior QA Automation Engineer</div>
-          <p class="exp-desc">ERP e sistemas corporativos de grande porte com BDD e TDD.</p>
-          <ul class="exp-bullets">
-            <li>Projetou suíte E2E, integração e regressão com Robot Framework + Java usando BDD e TDD</li>
-            <li>Go Live Unimed com zero defeitos críticos — validação total dos critérios de aceite por sprint</li>
-            <li>Definiu quality gates com Dev, PO e stakeholders — redução de 30% no tempo de ciclo de testes</li>
-          </ul>
-          <div class="proj-tags" style="margin-top:.8rem">
-            <span class="tag">Java</span><span class="tag">Robot Framework</span><span class="tag">BDD</span><span class="tag">TDD</span><span class="tag">Azure DevOps</span><span class="tag">Swagger</span>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="exp-item">
-        <div>
-          <div class="exp-date">Jul 2022 — Fev 2024</div>
-          <div class="exp-company">Grupo Carrefour Brasil</div>
-        </div>
-        <div>
-          <div class="exp-role">QA Engineer · Marketplace & E-commerce</div>
-          <p class="exp-desc">Marketplace Out & Fulfillment — implementação do Mercado Livre no ecossistema Carrefour.</p>
-          <ul class="exp-bullets">
-            <li>Liderou cobertura E2E do Marketplace Out via CD ECJ — 10.000+ transações/dia</li>
-            <li>Validou integrações entre VTEX, ERP Gold, Digibee, Janis e Mirakl — fulfillment, omnichannel e logística reversa sem incidentes de produção</li>
-            <li>Executou testes de API, validação SQL e análise de defeitos — estabilidade operacional no pós Go Live</li>
-          </ul>
-          <div class="proj-tags" style="margin-top:.8rem">
-            <span class="tag">Java</span><span class="tag">Postman</span><span class="tag">Camunda</span><span class="tag">VTEX</span><span class="tag">ERP Gold</span><span class="tag">Digibee</span><span class="tag">Xray</span>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="exp-item">
-        <div>
-          <div class="exp-date">Ago 2021 — Jul 2022</div>
-          <div class="exp-company">Lojas Renner S.A.</div>
-        </div>
-        <div>
-          <div class="exp-role">Software Quality Specialist</div>
-          <p class="exp-desc">Marketplace e produtos digitais — qualidade em ciclos rápidos de entrega mobile & web.</p>
-          <ul class="exp-bullets">
-            <li>Contribuiu para o lançamento do App Youcom 1.0 — validação de qualidade, UX/UI e regressão</li>
-            <li>Integrou marketplace Youcom com Renner, Dafiti e Mercado Livre via Linx</li>
-            <li>Monitorou KPIs de conversão via Google Analytics 4 + MicroStrategy</li>
-          </ul>
-          <div class="proj-tags" style="margin-top:.8rem">
-            <span class="tag">GA4</span><span class="tag">Linx Impulse</span><span class="tag">OMS</span><span class="tag">MicroStrategy</span><span class="tag">CRM</span>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="exp-item">
-        <div>
-          <div class="exp-date">Set 2016 — Fev 2019</div>
-          <div class="exp-company">B2W Digital · Mercadocar</div>
-        </div>
-        <div>
-          <div class="exp-role">Software Quality Engineer</div>
-          <p class="exp-desc">Integrações marketplace e varejo no ecossistema SkyHub e sistemas POS/ERP.</p>
-          <ul class="exp-bullets">
-            <li>B2W/SkyHub: API Testing, validação JSON e integrações VTEX/Magento/Oracle — onboarding e go-live de 50+ sellers</li>
-            <li>Mercadocar: testes funcionais POS, varejo e e-commerce — validação SQL, REST APIs e integração VTEX + TOTVS com C#, Python e Robot Framework</li>
-          </ul>
-          <div class="proj-tags" style="margin-top:.8rem">
-            <span class="tag">Robot Framework</span><span class="tag">Cucumber</span><span class="tag">C#</span><span class="tag">SkyHub</span><span class="tag">VTEX</span><span class="tag">Magento</span><span class="tag">Oracle</span>
-          </div>
         </div>
       </div>
 
